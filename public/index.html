@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="et-ee">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Transport</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.webmanifest">
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <h1>Public transport</h1>
+    <div id="content">
+      <img src="loading.gif" class="loading" />
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js" defer></script>
+    <script id="template" type="text/x-handlebars-template">
+      <ul class="stops">
+        {{#each .}}
+        <li>
+          <h2>{{name}}</h2>
+          <table class="buses">
+            <tbody>
+              {{#each (slice buses limit)}}
+              <tr>
+                <td class="right no-pad">{{number.digits}}</td>
+                <td>{{number.letters}}</td>
+                <td>{{direction}}</td>
+                <td class="right">{{wait}}</td>
+                <td class="right no-pad">{{time}}</td>
+                {{#if delay}}
+                  <td>
+                    <span class="sup">{{delay}}</span>
+                  </td>
+                {{else}}
+                  <td class="no-pad"></td>
+                {{/if}}
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+          {{#if more}}
+          <div class="more-container">
+            <a class="more-button" onclick="showMore({{@index}})">show more</a>
+          </div>
+          {{/if}}
+        </li>
+        {{/each}}
+      </ul>      
+    </script>
+  </body>
+</html>

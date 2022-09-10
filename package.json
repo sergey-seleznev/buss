@@ -1,0 +1,8 @@
+{
+  "name": "buss-build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "prepare.js",
+  "author": "Sergey Seleznev",
+  "license": "ISC"
+}

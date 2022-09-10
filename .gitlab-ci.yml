@@ -1,0 +1,13 @@
+image: node:latest
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  script:
+    - npm i
+    - node ./prepare.js
+  artifacts:
+    paths:
+      - public
