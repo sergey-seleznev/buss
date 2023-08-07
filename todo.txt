@@ -1,0 +1,16 @@
+Docs: https://avaandmed.tallinn.ee/nimistu?id=33
+
+PWA
+lock-screen (?)
+
+- download stops to local storage, periodically update
+	https://transport.tallinn.ee/data/stops.xml
+
+- on activate, detect the nearest stops
+
+- load and display the upcoming buses
+	https://transport.tallinn.ee/siri-stop-departures.php?stopid=126807
+
+- favorites
+    - allow marking favorite stops
+    - 
