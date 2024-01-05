@@ -1,0 +1,54 @@
+#departures-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: #ffffffdd;
+  border-radius: 1em 0 0 0;
+  font-size: 115%;
+  font-family: 'Open Sans', sans-serif;
+  max-height: 23.6em;
+  overflow: auto;
+  user-select: none;
+  text-shadow: 1px 1px #fff;
+  border-width: 1px 0 0 1px;
+  border-style: solid;
+  border-color: #aaa;
+}
+
+ul {
+  padding: 0;
+  margin: 0.5em 0.5em;
+  display: table;
+}
+
+li {
+  display: table-row;
+  line-height: 90%;
+}
+
+li > span {
+  display: table-cell;
+  vertical-align: top;
+  padding: 0.2em 0.2em;
+}
+
+.time {
+  width: 3.5em;
+  text-align: right;
+  margin-right: 0.5em;
+}
+
+.clock {
+  font-size: 0.8em;
+  text-align: right;
+  margin-right: 0.3em;
+}
+
+.route {
+  text-align: right;
+  margin-right: 0.5em;
+}
+
+.direction {
+  font-size: 0.8em;
+}

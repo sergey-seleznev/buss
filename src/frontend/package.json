@@ -1,0 +1,17 @@
+{
+  "name": "buss",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build --emptyOutDir",
+    "build:watch": "vite build --watch",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.11"
+  },
+  "dependencies": {
+    "ol": "latest"
+  }
+}

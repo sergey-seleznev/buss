@@ -1,0 +1,10 @@
+{{#each .}}
+<table>
+  {{#each .}}
+  <tr>
+    <td class="minutes"><div>{{minutes}}</div></td>
+    <td class="route"><div style="background: {{color}}">{{route}}</div></td>
+  </tr>
+  {{/each}}
+</table>
+{{/each}}

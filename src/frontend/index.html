@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buss</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="map"></div>
+    <div id="departures-container"></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js" integrity="sha512-E1dSFxg+wsfJ4HKjutk/WaCzK7S2wv1POn1RRPGh8ZK+ag9l244Vqxji3r6wgz9YBf6+vhQEYJZpSjqWFPg9gg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script id="departures-template" type="text/x-handlebars-template">
+      <ul>
+        {{#each .}}
+        <li>
+          <span class="time">{{until expected}}<br/><span class="clock">{{time expected}}</span></span>
+          <span class="route">{{route}}</span>
+          <span class="stations">
+            {{stop}}
+            <br/>
+            <span class="direction">{{direction}}</span>
+          </span>
+        </li>
+        {{/each}}
+      </ul>
+    </script>
+    <script type="module" src="map.js" defer></script>
+    <script type="module" src="timetables.js" defer></script>
+    <script type="module" src="locations.js" defer></script>
+    <script type="module" src="departures.js" defer></script>
+    <script type="module" src="position.js" defer></script>
+  </body>
+</html>

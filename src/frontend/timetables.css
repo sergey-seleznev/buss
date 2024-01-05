@@ -1,0 +1,32 @@
+.timetable {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  align-items: flex-start;
+  font-size: 1.1em;
+  font-family: "Open Sans";
+  background:#ffffffaa;
+  border: 1px solid #00000022;
+  border-radius: 6px;
+  padding: 2px 5px;
+}
+
+.timetable table:not(:last-child) {
+  margin-right: 6px;
+}
+
+.minutes {
+  text-align: right;
+}
+.minutes div::after {
+  content: "\0027";
+}
+
+.route div {
+  vertical-align: middle;
+  text-align: center;
+  font-size: 0.7em;
+  border: black solid 1px;
+  border-radius: 6px;
+  padding: 1px 4px;
+}
