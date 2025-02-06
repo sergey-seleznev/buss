@@ -1,6 +1,11 @@
 import query from './query'
 import site from './site'
+
+import departuresTemplate from './departures.hbs?raw'
+
 import './departures.css'
+
+const renderTemplate = Handlebars.compile(departuresTemplate)
 
 Handlebars.registerHelper('time', function (t) {
   const d = new Date(t)
@@ -33,9 +38,8 @@ function renderDepartures(departures) {
     }
   })
 
-  const template = document.getElementById('departures-template').innerHTML
   const container = document.getElementById('departures-container')
-  container.innerHTML = Handlebars.compile(template)(data)
+  container.innerHTML = renderTemplate(data)
 }
 
 async function updateDepartures() {

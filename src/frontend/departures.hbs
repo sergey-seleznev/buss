@@ -1,0 +1,13 @@
+<ul>
+  {{#each .}}
+  <li>
+    <span class="time">{{until expected}}<br/><span class="clock">{{time expected}}</span></span>
+    <span class="route">{{route}}</span>
+    <span class="stations">
+      {{stop}}
+      <br/>
+      <span class="direction">{{direction}}</span>
+    </span>
+  </li>
+  {{/each}}
+</ul>
