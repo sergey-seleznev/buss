@@ -4,7 +4,7 @@ import {XYZ} from 'ol/source'
 import {useGeographic} from 'ol/proj'
 
 import './map.css'
-import site from './site'
+import site from '../config/site'
 
 useGeographic();
 

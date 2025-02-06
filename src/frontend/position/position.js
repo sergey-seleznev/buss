@@ -4,7 +4,7 @@ import {Vector as VectorLayer} from 'ol/layer'
 import {Vector as VectorSource} from 'ol/source'
 import {Circle as CircleStyle, Fill, Style} from 'ol/style'
 
-import map from './map'
+import map from '../map/map'
 
 let feature
 

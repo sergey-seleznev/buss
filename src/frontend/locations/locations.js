@@ -6,10 +6,10 @@ import {Icon, Style} from 'ol/style'
 
 import arrowIcon from './arrow.svg'
 
-import config from './config'
-import query from './query'
-import map from './map'
-import site from './site'
+import config from '../config/config'
+import query from '../query'
+import map from '../map/map'
+import site from '../config/site'
 
 const source = new VectorSource({ features: [] })
 const features = {}

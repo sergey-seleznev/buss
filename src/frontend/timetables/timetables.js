@@ -1,9 +1,9 @@
 import {Overlay} from 'ol';
 
-import config from './config'
-import site from './site'
-import query from './query'
-import map from './map'
+import config from '../config/config'
+import site from '../config/site'
+import query from '../query'
+import map from '../map/map'
 
 import timetableTemplate from './timetable.hbs?raw'
 

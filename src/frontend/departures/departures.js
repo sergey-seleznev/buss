@@ -1,5 +1,5 @@
-import query from './query'
-import site from './site'
+import query from '../query'
+import site from '../config/site'
 
 import departuresTemplate from './departures.hbs?raw'
 
