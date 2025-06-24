@@ -5,7 +5,4 @@ services:
     restart: unless-stopped
     build:
       context: .
-    env_file: ".env"
-    volumes:
-      - /home/sergey/docker/buss/index.js:/app/index.js
-      - /home/sergey/docker/buss/public:/app/public
+    env_file: .env

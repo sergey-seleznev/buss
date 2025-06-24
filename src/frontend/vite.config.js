@@ -1,6 +1,5 @@
 export default {
   publicDir: "static-assets",
-  envDir: '../..',
   build: {
     sourcemap: true,
     target: 'esnext',
