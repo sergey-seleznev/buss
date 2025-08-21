@@ -7,5 +7,6 @@ export default {
   },
   server: {
     host: true, // listen all interfaces
+    proxy: {'/api': 'http://localhost:8124'}
   }
 }
