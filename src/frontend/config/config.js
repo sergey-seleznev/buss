@@ -1,10 +1,4 @@
 const config = {
-  colors: {
-    '24': '#8bb19c66',
-    '24A': '#8bb19c66',
-    '20': '#5c93e866',
-    '20A': '#5c93e866'
-  },
   sites: [
     {
       title: "Home",
@@ -72,8 +66,8 @@ const config = {
 
     {
       title: "Lasteaed",
-      center: [24.66106, 59.40034],
-      zoom: 15.2,
+      center: [24.66200, 59.40103],
+      zoom: 15.1,
       stops: [
         {
           id: 917,
@@ -84,7 +78,12 @@ const config = {
             { type: 'bus', route: '20', direction: 'Sadam' },
             { type: 'bus', route: '20A', direction: 'Sadam' },
             { type: 'bus', route: '24', direction: 'Estonia' }
-          ]
+          ],
+          timetable: {
+            position: [24.66452 , 59.40336],
+            positioning: 'top-left',
+            offset: [0, 25],
+          }
         },
         {
           id: 927,
@@ -95,15 +94,33 @@ const config = {
             { type: 'bus', route: '11', direction: 'Estonia' },
             { type: 'bus', route: '20', direction: 'Sadam' },
             { type: 'bus', route: '20A', direction: 'Sadam' }
-          ]
-        }
+          ],
+          timetable: {
+            position: [24.65627, 59.40335],
+            positioning: 'top-left',
+            offset: [-60, 10],
+          }
+        },
+        {
+          id: 905,
+          name: 'E.Vilde tee',
+          location: [24.66874, 59.40469],
+          transports: [
+            { type: 'bus', route: '28', direction: 'Veerenni' }
+          ],
+          timetable: {
+            position: [24.66874, 59.40469],
+            positioning: 'bottom-right',
+            offset: [-40, 0],
+          }
+        },
       ]
     },
 
     {
       title: "Bolt",
-      center: [24.74926, 59.43000], // 24.749505306711193, 59.42999694588329
-      zoom: 15,
+      center: [24.74926, 59.43000],
+      zoom: 14.5,
       stops: [
         {
           id: 1249,
@@ -145,11 +162,12 @@ const config = {
 
   colors: {
     // https://coolors.co/palettes/maps
-    '9': 'red', // TODO find one
-    '11': 'red',  // TODO find one
+    '9': '#7f4747',
+    '11': '#7f4747',
     '20': '#4895ef',
     '20A': '#4895ef',
     '24': '#81b29a',
+    '28': '#abb281',
   }
 }
 
