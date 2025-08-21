@@ -9,7 +9,7 @@ import arrowIcon from './arrow.svg'
 import config from '../config/config'
 import query from '../query'
 import map from '../map/map'
-import site from '../config/site'
+import onSite from '../position/position'
 
 const source = new VectorSource({ features: [] })
 const features = {}
@@ -46,10 +46,12 @@ function renderLocations(locations) {
   })
 }
 
-async function updateLocations() {
+async function updateLocations(site) {
   const locations = await getLocations(site)
   renderLocations(locations)
   setTimeout(() => updateLocations(), 3000)
 }
 
-updateLocations()
+onSite(site => {
+  updateLocations(site)
+})

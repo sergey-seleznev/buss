@@ -1,5 +1,5 @@
 import query from '../query'
-import site from '../config/site'
+import onSite from '../position/position'
 
 import departuresTemplate from './departures.hbs?raw'
 
@@ -42,10 +42,12 @@ function renderDepartures(departures) {
   container.innerHTML = renderTemplate(data)
 }
 
-async function updateDepartures() {
+async function updateDepartures(site) {
   const departures = await getDepartures(site)
   renderDepartures(departures)
-  setTimeout(() => updateDepartures(), 15000)
+  setTimeout(() => updateDepartures(site), 15000)
 }
 
-updateDepartures()
+onSite(site => {
+  updateDepartures(site)
+})

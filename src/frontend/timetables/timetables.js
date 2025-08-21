@@ -1,7 +1,7 @@
 import {Overlay} from 'ol';
 
 import config from '../config/config'
-import site from '../config/site'
+import onSite from '../position/position'
 import query from '../query'
 import map from '../map/map'
 
@@ -9,16 +9,17 @@ import timetableTemplate from './timetable.hbs?raw'
 
 import './timetables.css'
 
-const stops = site.stops.reduce((res, stop) => {
-  res[stop.id] = stop
-  return res
-}, {})
-
 const renderTemplate = Handlebars.compile(timetableTemplate)
 
 const timetables = {}
+let stops = {}
 
-function createTimetables() {
+function createTimetables(site) {
+  stops = site.stops.reduce((res, stop) => {
+    res[stop.id] = stop
+    return res
+  }, {})
+
   site.stops.forEach(stop => {
     const div = timetables[stop.id] = document.createElement('div')
     div.id = `timetable-${stop.id}`
@@ -73,11 +74,13 @@ function minutesTo(date) {
   return res <= 0 ? 0 : res
 }
 
-async function updateTimetables() {
+async function updateTimetables(site) {
   const departures = await getDepartures(site)
   renderTimetables(departures)
   setTimeout(() => updateTimetables(), 15000)
 }
 
-createTimetables()
-updateTimetables()
+onSite(site => {
+  createTimetables(site)
+  updateTimetables(site)
+})

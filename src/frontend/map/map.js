@@ -4,7 +4,7 @@ import {XYZ} from 'ol/source'
 import {useGeographic} from 'ol/proj'
 
 import './map.css'
-import site from '../config/site'
+import onSite from '../position/position'
 
 useGeographic();
 
@@ -18,11 +18,14 @@ const map = new Map({
       }),
     }),
   ],
-  view: new View({
+  controls: []
+})
+
+onSite(site => {
+  map.setView(new View({
     center: site.center,
     zoom: site.zoom,
-  }),
-  controls: []
+  }))
 })
 
 export default map
